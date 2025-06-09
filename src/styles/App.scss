@@ -1,6 +1,7 @@
 @use './core/reset';
 
-/* Aquí van los estilos */body {
+/* Aquí van los estilos */
+body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   margin: 0;
@@ -36,4 +37,30 @@ input, select {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-image {
+  width: 210px;
+  height: 295px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.card p {
+  color: #666;
+  margin: 0;
 }
