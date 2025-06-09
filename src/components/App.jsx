@@ -9,6 +9,7 @@ const PLACEHOLDER_IMAGE = "https://placehold.co/210x295/666666/FFFFFF?text=Sin+I
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [searchName, setSearchName] = useState(""); // <- Estado para el input
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters/house/gryffindor")
@@ -17,12 +18,23 @@ function App() {
       .catch((err) => console.error("Error al obtener personajes:", err));
   }, []);
 
+  // Aplicar filtro por nombre
+  const filteredCharacters = characters.filter((char) =>
+    char.name.toLowerCase().includes(searchName.toLowerCase())
+  );
+
   return (
     <div className="container">
       <h1>Personajes de Harry Potter</h1>
 
       <div className="filters">
-        <input type="text" placeholder="Buscar por nombre..." disabled />
+        <input
+          type="text"
+          placeholder="Buscar por nombre..."
+          value={searchName}
+          onChange={(e) => setSearchName(e.target.value)}
+        />
+
         <select disabled>
           <option>Gryffindor</option>
           <option>Slytherin</option>
@@ -32,7 +44,7 @@ function App() {
       </div>
 
       <div className="card-grid">
-        {characters.map((char) => (
+        {filteredCharacters.map((char) => (
           <div key={char.name} className="card">
             <img
               src={char.image || PLACEHOLDER_IMAGE}
@@ -49,5 +61,3 @@ function App() {
 }
 
 export default App;
-
-
