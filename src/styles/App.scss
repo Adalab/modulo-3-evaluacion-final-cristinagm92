@@ -75,3 +75,8 @@ input, select {
   color: #666;
   margin: 0;
 }
+@media screen and (max-width: 670px) {
+  .How {
+    display: none;
+  }
+}
