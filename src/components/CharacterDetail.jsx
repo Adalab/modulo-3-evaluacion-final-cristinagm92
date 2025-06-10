@@ -26,6 +26,10 @@ function CharacterDetail() {
   }, [characterName]);
 
   if (!character) return <p>Cargando personaje...</p>;
+  if (character === undefined) {
+  return <p>El personaje que buscas no existe.</p>;
+}
+
 
   const image =
     character.image && character.image.trim() !== ""
