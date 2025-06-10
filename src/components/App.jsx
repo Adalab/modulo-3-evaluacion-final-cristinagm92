@@ -5,6 +5,7 @@ import CharacterDetail from "./CharacterDetail";
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Filter from "./Filter.jsx";
+import Howartslogo from "../images/Hogwarts-Logo.png";
 
 
 function App() {
@@ -31,7 +32,14 @@ function App() {
         path="/"
         element={
           <div className="container">
-            <h1>Personajes de Harry Potter</h1>
+    <h1>
+  <img className="How" src={Howartslogo} alt="Logo de Hogwarts" />
+  Personajes de Harry Potter
+  <img className="How" src={Howartslogo} alt="Logo de Hogwarts" />
+</h1>
+
+
+           
             <Filter
               search={search}
               onSearchChange={(e) => setSearch(e.target.value)}
