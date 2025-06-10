@@ -42,8 +42,12 @@ function CharacterDetail() {
         <p><strong>Estado:</strong> {character.alive ? "Vivo" : "Muerto"}</p>
         <p><strong>Género:</strong> {character.gender}</p>
         <p><strong>Especie:</strong> {character.species}</p>
+        <p><strong>Estado:</strong> {character.alive ? "🟢 Vivo" : "⚰️ Muerto"}</p>
+
         {character.alternate_names?.length > 0 && (
           <p><strong>Alias:</strong> {character.alternate_names.join(", ")}</p>
+        
+
         )}
       </div>
     </div>
