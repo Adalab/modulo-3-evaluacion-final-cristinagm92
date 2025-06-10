@@ -9,7 +9,7 @@ function CharacterList({ characters, search }) {
   return (
     <div className="card-grid">
       {characters.map((char) => (
-        <CharacterCard key={char.name} character={char} />
+        <CharacterCard key={char.id} character={char} />
       ))}
     </div>
   );
