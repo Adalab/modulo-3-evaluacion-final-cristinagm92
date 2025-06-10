@@ -22,6 +22,13 @@ function Filter({ search, onSearchChange, house, onHouseChange }) {
           </option>
         ))}
       </select>
+      <button type="button" onClick={() => {
+  onSearchChange({ target: { value: "" } });
+  onHouseChange({ target: { value: "Gryffindor" } });
+}}>
+  Resetear filtros
+</button>
+
     </form>
   );
 }
